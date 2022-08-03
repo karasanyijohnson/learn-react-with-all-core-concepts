@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 import './App.css';
 
 import Manatee from '../Manatee/Manatee';
@@ -20,17 +20,11 @@ function App() {
             <li><Link to="/whale/blue">Blue Whale</Link></li>
           </ul>
         </nav>
-        <Switch>
-          <Route path="/manatee">
-            <Manatee />
-          </Route>
-          <Route path="/narwhal">
-            <Narwhal />
-          </Route>
-          <Route path="/whale">
-            <Whale />
-          </Route>
-        </Switch>
+        <Routes>
+          <Route path="/manatee" element={ <Manatee />}/>
+          <Route path="/narwhal" element={ <Narwhal />}/>
+          <Route path="/whale" element={ <Whale />}/>
+        </Routes>
       </BrowserRouter>
     </div>
   );

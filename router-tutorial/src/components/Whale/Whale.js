@@ -1,21 +1,20 @@
 import React from 'react';
-import { Switch, Route, useRouteMatch } from 'react-router-dom';
+import { Routes, Route, useMatch } from 'react-router-dom';
 import Beluga from './Beluga';
 import Blue from './Blue';
 
 export default function Whale() {
-  const { path } = useRouteMatch();
+  const depend= useMatch()
+  console.log(depend)
+  const { path } = useMatch();
   return (
     <>
       <h2>Whale</h2>
-      <Switch>
-        <Route path={`${path}/beluga`}>
-          <Beluga />
-        </Route>
-        <Route path={`${path}/blue`}>
-          <Blue />
-        </Route>
-      </Switch>
+      <Routes>
+        <Route path={`${path}/beluga`} element={<Beluga />}/>
+
+        <Route path={`${path}/blue`} element={<Blue />}/>
+      </Routes>
     </>
   );
 }
