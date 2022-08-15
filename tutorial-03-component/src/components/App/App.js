@@ -3,6 +3,7 @@ import Instructions from '../Instructions/Instructions.js';
 import './App.css';
 
 const displayEmojiName = event => alert(event.target.id);
+//Emojis to be displayed
 const emojis = [
   {
     emoji: '😀',
