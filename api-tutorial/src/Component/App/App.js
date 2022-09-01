@@ -48,7 +48,7 @@ function App() {
       <h1>My Grocery List</h1>
       {alert && <h2> Submit Successful</h2>}
       <ul>
-        {list.map(item => <li key={item.item}>{item.item}</li>)}
+        {list.map(item => <li key={item.id}>{item.item}</li>)}
       </ul>
       <form onSubmit={handleSubmit}>
         <label>
